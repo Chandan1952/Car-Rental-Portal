@@ -17,7 +17,7 @@ const UpdateContactInfo = () => {
   useEffect(() => {
     const fetchContactDetails = async () => {
       try {
-        const response = await fetch("http://localhost:5000/contact-details");
+        const response = await fetch("https://car-rental-portal-backend.onrender.com/contact-details");
         const data = await response.json();
         setContactInfo(data);
       } catch (error) {
@@ -40,7 +40,7 @@ const UpdateContactInfo = () => {
     setIsUpdating(true);
     
     try {
-      const response = await fetch("http://localhost:5000/update-contact", {
+      const response = await fetch("https://car-rental-portal-backend.onrender.com/update-contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(contactInfo),
