@@ -23,7 +23,7 @@ const ManageBrands = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get("http://localhost:5000/allbrands");
+      const response = await axios.get("https://car-rental-portal-backend.onrender.com/allbrands");
       setBrands(response.data);
     } catch (error) {
       setError("Failed to fetch brands.");
@@ -37,7 +37,7 @@ const ManageBrands = () => {
     if (!window.confirm("Are you sure you want to delete this brand?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/brands/${id}`);
+      await axios.delete(`https://car-rental-portal-backend.onrender.com/api/brands/${id}`);
       setBrands(brands.filter((brand) => brand._id !== id));
       toast.success("Brand deleted successfully");
     } catch (error) {
@@ -57,7 +57,7 @@ const ManageBrands = () => {
     }
 
     try {
-      await axios.put(`http://localhost:5000/api/brands/${id}`, { name: editName });
+      await axios.put(`https://car-rental-portal-backend.onrender.com/api/brands/${id}`, { name: editName });
       setBrands(brands.map((brand) => (brand._id === id ? { ...brand, name: editName } : brand)));
       setEditId(null);
       toast.success("Brand updated successfully");
@@ -73,7 +73,7 @@ const ManageBrands = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/brands", { name: newBrand });
+      const response = await axios.post("https://car-rental-portal-backend.onrender.com/api/brands", { name: newBrand });
       setBrands([...brands, response.data]);
       setNewBrand("");
       toast.success("Brand added successfully");
