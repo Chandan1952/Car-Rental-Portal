@@ -17,7 +17,7 @@ export default function Header() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/contact-details")
+    fetch("https://car-rental-portal-backend.onrender.com/contact-details")
       .then((response) => response.json())
       .then((data) => setContactDetails(data))
       .catch((error) => {
@@ -33,7 +33,7 @@ export default function Header() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/user", { credentials: "include" });
+        const response = await fetch("https://car-rental-portal-backend.onrender.com/api/user", { credentials: "include" });
         const data = await response.json();
         if (response.ok) {
           setUser(data);
@@ -51,7 +51,7 @@ export default function Header() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", {
+      const response = await fetch("https://car-rental-portal-backend.onrender.com/logout", {
         method: "POST",
         credentials: "include",
       });
