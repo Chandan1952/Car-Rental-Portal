@@ -19,7 +19,7 @@ const Footer = () => {
     setMessage("");
 
     try {
-      const response = await fetch("http://localhost:5000/subscribe", {
+      const response = await fetch("https://car-rental-portal-backend.onrender.com/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
