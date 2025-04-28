@@ -13,7 +13,7 @@ const AdminHeader = () => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/admin", { 
+        const response = await axios.get("https://car-rental-portal-backend.onrender.com/api/admin", { 
           withCredentials: true 
         });
         setAdmin(response.data);
@@ -31,7 +31,7 @@ const AdminHeader = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/admin-logout", 
+        "https://car-rental-portal-backend.onrender.com/admin-logout", 
         {}, 
         { withCredentials: true }
       );
