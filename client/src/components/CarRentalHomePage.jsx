@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight, FaCar, FaStar, FaGasPump, FaTachometerAlt, FaUserFriends } from 'react-icons/fa';
 import { MdAirlineSeatReclineNormal, MdOutlineElectricCar } from 'react-icons/md';
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://car-rental-portal-backend.onrender.com";
 
 export default function CarRentalHomePage() {
   const [cars, setCars] = useState([]);
