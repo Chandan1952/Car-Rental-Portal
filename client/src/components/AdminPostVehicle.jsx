@@ -40,7 +40,7 @@ const AdminPostVehicle = () => {
   useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const response = await fetch("http://localhost:5000/allbrands");
+        const response = await fetch("https://car-rental-portal-backend.onrender.com/allbrands");
         const data = await response.json();
         setBrands(data);
       } catch (error) {
@@ -100,7 +100,7 @@ const AdminPostVehicle = () => {
     formData.images.forEach((file) => formDataToSend.append("images", file));
 
     try {
-      const response = await fetch("http://localhost:5000/api/vehicles", {
+      const response = await fetch("https://car-rental-portal-backend.onrender.com/api/vehicles", {
         method: "POST",
         body: formDataToSend,
       });
