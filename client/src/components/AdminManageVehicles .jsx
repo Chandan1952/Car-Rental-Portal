@@ -51,7 +51,7 @@ const AdminManageVehicles = () => {
   useEffect(() => {
     const fetchVehicles = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/vehiclesdetails");
+        const response = await fetch("https://car-rental-portal-backend.onrender.com/api/vehiclesdetails");
         if (!response.ok) throw new Error("Failed to fetch vehicles");
         const data = await response.json();
         setVehicles(data);
@@ -74,7 +74,7 @@ const AdminManageVehicles = () => {
   const handleDeleteConfirm = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/delete/${vehicleToDelete._id}`,
+        `https://car-rental-portal-backend.onrender.com/api/delete/${vehicleToDelete._id}`,
         {
           method: "DELETE",
         }
