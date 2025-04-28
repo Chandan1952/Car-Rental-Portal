@@ -16,7 +16,7 @@ const UserProfilePage = () => {
 
   useEffect(() => {
     // Fetch user data
-    fetch("http://localhost:5000/api/user", {
+    fetch("https://car-rental-portal-backend.onrender.com/api/user", {
       credentials: "include",
     })
       .then((res) => {
@@ -34,7 +34,7 @@ const UserProfilePage = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/update-user/${user._id}`, {
+      const response = await fetch(`https://car-rental-portal-backend.onrender.com/update-user/${user._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
