@@ -57,7 +57,7 @@ export default function ManageTestimonials() {
     setError(null);
     try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/testimonials",
+        "https://car-rental-portal-backend.onrender.com/api/admin/testimonials",
         {
           method: "GET",
           credentials: "include",
@@ -83,7 +83,7 @@ export default function ManageTestimonials() {
       const newApproved = !currentApproved;
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/testimonials/${id}/approve`,
+        `https://car-rental-portal-backend.onrender.com/api/admin/testimonials/${id}/approve`,
         {
           method: "PATCH",
           credentials: "include",
@@ -126,7 +126,7 @@ export default function ManageTestimonials() {
     
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/testimonials/${selectedTestimonial._id}`,
+        `https://car-rental-portal-backend.onrender.com/api/admin/testimonials/${selectedTestimonial._id}`,
         {
           method: "DELETE",
           credentials: "include",
