@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import UserSidebar from "../components/UserSidebar";
 import { PulseLoader } from "react-spinners";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://car-rental-portal-backend.onrender.com";
 
 export default function UserMyBooking() {
   const [bookings, setBookings] = useState([]);
