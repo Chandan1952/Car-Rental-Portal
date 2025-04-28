@@ -222,7 +222,7 @@ const ManageQueries = () => {
   const fetchQueries = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/allqueries");
+      const response = await fetch("https://car-rental-portal-backend.onrender.com/api/allqueries");
       const data = await response.json();
       setQueries(data);
       setFilteredQueries(data);
@@ -236,7 +236,7 @@ const ManageQueries = () => {
 
   const updateQueryStatus = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/query/${id}`, {
+      const response = await fetch(`https://car-rental-portal-backend.onrender.com/api/query/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),
