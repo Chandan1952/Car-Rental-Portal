@@ -191,7 +191,7 @@ const ManageSubscriptions = () => {
 
   const fetchSubscriptions = async () => {
     try {
-      const response = await fetch("http://localhost:5000/subscriptions");
+      const response = await fetch("https://car-rental-portal-backend.onrender.com/subscriptions");
       const data = await response.json();
       setSubscriptions(data);
       setFilteredSubscriptions(data);
@@ -206,7 +206,7 @@ const ManageSubscriptions = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this subscription?")) return;
     try {
-      const response = await fetch(`http://localhost:5000/subscriptions/${id}`, {
+      const response = await fetch(`https://car-rental-portal-backend.onrender.com/subscriptions/${id}`, {
         method: "DELETE",
       });
       const data = await response.json();
