@@ -15,7 +15,7 @@ const CreateBrand = () => {
     setMessage({ text: "", type: "" });
 
     try {
-      const response = await fetch("http://localhost:5000/brands", {
+      const response = await fetch("https://car-rental-portal-backend.onrender.com/brands", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: brandName }),
