@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://car-rental-portal-backend.onrender.com";
 
 // Reusable function to handle image URLs
 const getImageUrl = (images) => {
