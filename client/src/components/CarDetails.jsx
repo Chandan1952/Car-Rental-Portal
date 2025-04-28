@@ -7,7 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import CarRentalHomePage from "./CarRentalHomePage";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://car-rental-portal-backend.onrender.com";
 const RAZORPAY_KEY_ID = "rzp_test_rv1bH6Okprpr7t";
 
 
