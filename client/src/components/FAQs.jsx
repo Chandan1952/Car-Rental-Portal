@@ -25,7 +25,7 @@ export default function FAQs() {
 
   const fetchFAQs = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/faqs");
+      const response = await axios.get("https://car-rental-portal-backend.onrender.com/api/faqs");
       setFaqs(response.data);
       setFilteredFaqs(response.data);
     } catch (error) {
