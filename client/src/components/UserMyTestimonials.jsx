@@ -183,7 +183,7 @@ export default function MyTestimonials() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://localhost:5000/api/mytestimonials", {
+      const response = await fetch("https://car-rental-portal-backend.onrender.com/api/mytestimonials", {
         method: "GET",
         credentials: "include",
       });
@@ -205,7 +205,7 @@ export default function MyTestimonials() {
     if (!window.confirm("Are you sure you want to delete this testimonial?")) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/mytestimonials/${id}`, {
+      const response = await fetch(`https://car-rental-portal-backend.onrender.com/api/mytestimonials/${id}`, {
         method: "DELETE",
         credentials: "include",
       });
