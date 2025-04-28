@@ -227,7 +227,7 @@ const AdminManageBookings = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/admin/bookings");
+        const response = await fetch("https://car-rental-portal-backend.onrender.com/api/admin/bookings");
         if (!response.ok) throw new Error("Failed to fetch bookings");
         const data = await response.json();
         setBookings(data);
@@ -242,7 +242,7 @@ const AdminManageBookings = () => {
 
   const handleStatusChange = async (id, status) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/bookings/${id}/status`, {
+      const response = await fetch(`https://car-rental-portal-backend.onrender.com/api/admin/bookings/${id}/status`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status }),
@@ -258,7 +258,7 @@ const AdminManageBookings = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this booking?")) {
       try {
-        await fetch(`http://localhost:5000/api/mybookings/${id}`, { method: "DELETE" });
+        await fetch(`https://car-rental-portal-backend.onrender.com/api/mybookings/${id}`, { method: "DELETE" });
         setBookings(bookings.filter((b) => b._id !== id));
         alert("Booking deleted successfully");
       } catch (err) {
