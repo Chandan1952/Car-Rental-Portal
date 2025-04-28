@@ -4,7 +4,7 @@ import { FiArrowRight, FiStar, FiClock, FiUsers, FiDroplet } from "react-icons/f
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://car-rental-portal-backend.onrender.com";
 
 export default function CarListing() {
   const [cars, setCars] = useState([]);
