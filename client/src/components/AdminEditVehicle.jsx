@@ -4,7 +4,7 @@ import { FiEdit2, FiTrash2, FiUpload, FiX, FiCheck, FiArrowLeft } from "react-ic
 import AdminHeader from "./AdminHeader";
 import AdminSidebar from "./AdminSidebar";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://car-rental-portal-backend.onrender.com";
 
 const AdminEditVehicle = () => {
   const { id } = useParams();
