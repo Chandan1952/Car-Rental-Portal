@@ -192,7 +192,7 @@ export default function AdminFAQs() {
   const fetchFAQs = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/faqs");
+      const response = await axios.get("https://car-rental-portal-backend.onrender.com/api/faqs");
       setFaqs(response.data);
     } catch (error) {
       setMessage({ text: "Error fetching FAQs. Please try again.", type: "error" });
@@ -210,10 +210,10 @@ export default function AdminFAQs() {
     setIsLoading(true);
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/api/faqs/${editingId}`, { question, answer });
+        await axios.put(`https://car-rental-portal-backend.onrender.com/api/faqs/${editingId}`, { question, answer });
         setMessage({ text: "FAQ updated successfully!", type: "success" });
       } else {
-        await axios.post("http://localhost:5000/api/faqs", { question, answer });
+        await axios.post("https://car-rental-portal-backend.onrender.com/api/faqs", { question, answer });
         setMessage({ text: "FAQ added successfully!", type: "success" });
       }
 
@@ -240,7 +240,7 @@ export default function AdminFAQs() {
 
     setIsLoading(true);
     try {
-      await axios.delete(`http://localhost:5000/api/faqs/${id}`);
+      await axios.delete(`https://car-rental-portal-backend.onrender.com/api/faqs/${id}`);
       setMessage({ text: "FAQ deleted successfully!", type: "success" });
       fetchFAQs();
     } catch (error) {
