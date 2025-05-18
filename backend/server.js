@@ -1,9 +1,9 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
-// const MongoStore = require("connect-mongo");
+const MongoStore = require("connect-mongo");
 const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
@@ -16,7 +16,7 @@ const app = express();
 // ✅ CORS Setup
 app.use(
   cors({
-    origin: "http://localhost:3000", // Use HTTP, not HTTPS
+    origin: "https://car-rental-portal-client.onrender.com", // Use HTTP, not HTTPS
     credentials: true,
   })
 );
@@ -32,24 +32,24 @@ app.use(
     secret: process.env.SESSION_SECRET || "yourSecretKey",
     resave: false,
     saveUninitialized: false,
-    // store: MongoStore.create({
-    //   mongoUrl: process.env.MONGO_URI,
-    //   collectionName: "sessions",
-    //   ttl: 14 * 24 * 60 * 60, // 14 days
-    // }),
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO_URI,
+      collectionName: "sessions",
+      ttl: 14 * 24 * 60 * 60, // 14 days
+    }),
     cookie: { secure: false },
   })
 );
 
 // ✅ MongoDB Connection
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then(() => console.log("✅ Connected to MongoDB"))
-//   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
-
-mongoose.connect("mongodb+srv://chandan1952:Chandan%401596@cluster0.dnvhw.mongodb.net/car-rental-portal?retryWrites=true&w=majority")
+mongoose
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
+// mongoose.connect("mongodb+srv://chandan1952:Chandan%401596@cluster0.dnvhw.mongodb.net/car-rental-portal?retryWrites=true&w=majority")
+//   .then(() => console.log("✅ Connected to MongoDB"))
+//   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 
 
