@@ -14,19 +14,19 @@ const crypto = require("crypto");
 const app = express();
 
 // ✅ CORS Setup
-// app.use(
-//   cors({
-//     origin: "https://car-rental-portal-client.onrender.com", // Use HTTP, not HTTPS
-//     credentials: true,
-//   })
-// );
-
 app.use(
   cors({
-    origin: "https://car-rental-portal-two.vercel.app/", // Use HTTP, not HTTPS
+    origin: "https://car-rental-portal-client.onrender.com", // Use HTTP, not HTTPS
     credentials: true,
   })
 );
+
+// app.use(
+//   cors({
+//     origin: "https://car-rental-portal-two.vercel.app/", // Use HTTP, not HTTPS
+//     credentials: true,
+//   })
+// );
 
 
 // ✅ Middleware
